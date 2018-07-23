@@ -6,12 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.androidjoke.JokeActivity;
 import com.example.androidjoke.JokeFragment;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView instruction;
+    Button button;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +50,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+        View rootView = view.getRootView();
+        instruction = rootView.findViewById(R.id.instructions_text_view);
+        button = view.findViewById(R.id.button_tellJoke);
+        progressBar = rootView.findViewById(R.id.pb_joke);
+
+        // generating the intent
+        final Intent intent = new Intent(this, JokeActivity.class);
         // I retrieve a joke
-        String joke = "ciao";
-//        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-        // then I send it by an intent to the Android Library androidJoke
-        Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra(JokeFragment.JOKE_KEY, joke);
-        startActivity(intent);
+        new EndpointsAsyncTask(new EndpointsAsyncListener<String>() {
+            @Override
+            public void onPreTaskExecute() {
+                instruction.setVisibility(View.GONE);
+                button.setVisibility(View.GONE);
+                progressBar.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onTaskComplete(String joke) {
+                instruction.setVisibility(View.VISIBLE);
+                button.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+                // then I send it by an intent to the Android Library androidJoke
+                intent.putExtra(JokeFragment.JOKE_KEY, joke);
+                startActivity(intent);
+            }
+        }).execute(this);
+
     }
 
 }
