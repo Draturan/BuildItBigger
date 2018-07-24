@@ -39,7 +39,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(path: ':backend', configuration: 'android-endpoints')
     implementation project(':androidjoke')
-    implementation project(':javaJoke')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.google.code.findbugs'
