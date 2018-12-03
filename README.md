@@ -1,5 +1,54 @@
 # BuildItBigger
+
+[![GitHub license](https://img.shields.io/github/license/Draturan/BuildItBigger.svg)](https://github.com/Draturan/BuildItBigger/blob/master/LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Android-blue.svg)](https://www.android.com)
+[![Language](https://img.shields.io/badge/language-Java,Gradle-blue.svg)](https://www.android.com)
+[![GitHub issues](https://img.shields.io/github/issues/Draturan/BuildItBigger.svg)](https://github.com/Draturan/BuildItBigger/issues)
+
 Fourth project for Udacity Android Developer Nanodegree Program, as Google scholarship.
+
+I've used `Gradle` to build a joke-telling app that has both a `free and paid version`. This included factoring functionality into `libraries` as well as using `build flavors` to modularize the construction of each variant of the app. I also configured a `Google Cloud Endpoints` development server to supply the jokes.
+
+## Features
+
+The App displays a very simple UI with a button to ask for a joke. By clicking on it the service retrieves to you a joke. 
+
+| Main screen |
+| ------- |
+| <img src="https://raw.githubusercontent.com/Draturan/BuildItBigger/master/assets/BuildItBigger_Homepage.png" width="200px" alt="Main Activity"/> |
+
+## Languages, libraries and tools used
+
+* [Java](https://docs.oracle.com/javase/8/)
+* Android Support Libraries ([Google Mobile Ads](https://developers.google.com/admob/android/quick-start))
+
+## Requirements
+
+* JDK 1.8
+* [Android SDK](https://developer.android.com/studio/index.html)
+* Android J ([API 16](https://developer.android.com/preview/api-overview.html))
+* Latest Android SDK Tools and build tools.
+
+## License
+
+```
+Copyright 2018 Simone Armadoro
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+> ###### **WARNING:** Please note that this project was submitted by Simone Armadoro as part of the Udacity's Android Developer Nanodegree.<br/><br/> As part of Udacity Honor code, your submissions must be your own work, hence submitting this project as yours will cause you to break the Udacity Honor Code and the suspension of your account. I allow you to check the code as a reference, but if you submit it, it's your own responsibility if you get expelled.<br/><br/> Besides this notice, the above license applies and this license notice must be included in all works derived from this project.
+
+<hr/>
 
 Hereunder the readme over the forked project
 
